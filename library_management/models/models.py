@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+from re import T
+from odoo import models, fields, api
+
+class LibraryBook(models.Model):
+    """Model for library books"""
+    _name = 'library.book'
+    _description = 'Library Book'
+
+    #Basic Information
+    name = fields.Char(string='Title', required=True)
+    isbn = fields.Char(string='ISBN', copy=False)
+    author = fields.Char(string='Author', required=True)
+    publisher = fields.Char(string='Publisher')
+    publish_date = fields.Date(string='Publish Date')
+    pages = fields.Integer(string='Number of Pages')
+
+    #Additional Information
+    description = fields.Text(string='Description')
+    cover_image = fields.Binary(string='Cover Image')
+
+    # Status
+    state = fields.Selection([
+        ('available', 'Available'),
+        ('borrowed', 'Borrowed'),
+        ('lost', 'Lost'),
+    ], string='Status', default='available')
+    
+    # Pricing
+    cost_price = fields.Float(string='Cost Price')
+    rental_price = fields.Float(string='Rental Price per Day')
