@@ -14,6 +14,7 @@ ENV/
 # IDE
 .vscode/
 .idea/
+.vs/
 *.swp
 *.swo
 *~
@@ -30,4 +31,4 @@ desktop.ini
 # Temporary files
 *.tmp
 *.bak
-*.orig
+*.orig"library_management/.vs/" 
