@@ -7,15 +7,16 @@
     'description': """
         Library Management System
         =========================
-        * Manage books
-        * Track borrowing
-        * Member management
+        * Manage books and authors
+        * Track borrowing and returns
+        * Book ratings
+        * Professional module for library operations
     """,
 
     'author': "Matt Wheatley",
     'website': "https://www.yourcompany.com",
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '1.0.1',
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
