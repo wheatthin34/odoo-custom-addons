@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 
 from re import T
 from odoo import models, fields, api
@@ -8,7 +8,7 @@ class LibraryBook(models.Model):
     _name = 'library.book'
     _description = 'Library Book'
 
-    #Basic Information
+    # Basic Information
     name = fields.Char(string='Title', required=True)
     isbn = fields.Char(string='ISBN', copy=False)
     author = fields.Char(string='Author', required=True)
@@ -20,6 +20,16 @@ class LibraryBook(models.Model):
     description = fields.Text(string='Description')
     cover_image = fields.Binary(string='Cover Image')
 
+    # Rating Field
+    rating = fields.Selection([
+        ('0', 'No Rating'),
+        ('1', '⭐'),
+        ('2', '⭐⭐'),
+        ('3', '⭐⭐⭐'),
+        ('4', '⭐⭐⭐⭐'),
+        ('5', '⭐⭐⭐⭐⭐'),
+    ], string='Rating', default='0', help='Book rating from readers (1-5 stars)')
+    
     # Status
     state = fields.Selection([
         ('available', 'Available'),
