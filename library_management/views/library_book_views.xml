@@ -51,6 +51,7 @@
 				<field name="name"/>
 				<field name="author"/>
 				<field name="isbn"/>
+				<field name="rating" widget="priority"/>
 				<field name="state"/>
 				<field name="rental_price"/>
 			</tree>
