@@ -21,7 +21,9 @@
     'depends': ['base', 'mail'],
     'data': [
         'security/ir.model.access.csv',
+        'data/sequence.xml',
         'views/library_book_views.xml',
+        'views/library_member_views.xml',
         'views/library_menu.xml',
     ],
     'demo': [
