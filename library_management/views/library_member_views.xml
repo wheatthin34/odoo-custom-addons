@@ -162,13 +162,6 @@
                         domain="[('status', '=', 'expired')]"/>
 
 				<separator/>
-				<filter string="Expiring Soon" name="expiring_soon"
-                        domain="[('membership_days_left', '&lt;=', 30), ('membership_days_left', '&gt;', 0)]"
-                        help="Members with less than 30 days until expiry"/>
-				<filter string="Already Expired" name="already_expired"
-                        domain="[('is_expired', '=', True)]"/>
-
-				<separator/>
 				<filter string="Archived" name="inactive"
                         domain="[('active', '=', False)]"/>
 
