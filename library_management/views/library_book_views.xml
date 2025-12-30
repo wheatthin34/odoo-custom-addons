@@ -64,18 +64,37 @@
 		<field name="model">library.book</field>
 		<field name="arch" type="xml">
 			<search string="Search Books">
+				<!-- Search Fields -->
 				<field name="name"/>
 				<field name="author"/>
 				<field name="isbn"/>
+				<field name="rating"/>
+				
+				<!-- Rating filters -->
 				<filter string="Available" name="available"
                         domain="[('state', '=', 'available')]"/>
 				<filter string="Borrowed" name="borrowed"
                         domain="[('state', '=', 'borrowed')]"/>
+				
+				<!-- Rating Filters -->
+				<separator/>
+				<filter string="⭐⭐⭐⭐⭐ (5 Stars)" name="rating_5"
+						domain="[('rating', '=', '5')]"/>
+				<filter string="⭐⭐⭐⭐ (4+ Stars)" name="rating_4_plus"
+						domain="[('rating', 'in', ['4', '5'])]"/>
+				<filter string="⭐⭐⭐ (3+ Stars)" name="rating_3_plus"
+						domain="[('rating', 'in', ['3', '4', '5'])]"/>
+				<filter string="Not Rated" name="not_rated"
+						domain="[('rating', '=', '0')]"/>
+				
+				<!-- Group by Options -->
 				<group string="Group By">
 					<filter name="group_by_author" string="Author"
                             context="{'group_by': 'author'}"/>
 					<filter name="group_by_state" string="Status"
                             context="{'group_by': 'state'}"/>
+					<filter name="group_by_rating" string="Rating"
+                        context="{'group_by': 'rating'}"/>
 				</group>
 			</search>
 		</field>
