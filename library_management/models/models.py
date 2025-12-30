@@ -7,11 +7,13 @@ class LibraryBook(models.Model):
     """Model for library books"""
     _name = 'library.book'
     _description = 'Library Book'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _rec_name = 'name'
 
     # Basic Information
-    name = fields.Char(string='Title', required=True)
+    name = fields.Char(string='Title', required=True, tracking=True)
     isbn = fields.Char(string='ISBN', copy=False)
-    author = fields.Char(string='Author', required=True)
+    author = fields.Char(string='Author', required=True, tracking=True)
     publisher = fields.Char(string='Publisher')
     publish_date = fields.Date(string='Publish Date')
     pages = fields.Integer(string='Number of Pages')
@@ -35,7 +37,7 @@ class LibraryBook(models.Model):
         ('available', 'Available'),
         ('borrowed', 'Borrowed'),
         ('lost', 'Lost'),
-    ], string='Status', default='available')
+    ], string='Status', default='available', tracking=True)
     
     # Pricing
     cost_price = fields.Float(string='Cost Price')
