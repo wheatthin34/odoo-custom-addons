@@ -13,4 +13,22 @@
               action="action_library_book"
               sequence="10"/>
 
+	<menuitem id="menu_library_book_list"
+              name="Books"
+              parent="menu_library_books"
+              action="action_library_book"
+              sequence="10"/>
+
+	<!-- Members Submenu -->
+	<menuitem id="menu_library_members"
+              name="Members"
+              parent="menu_library_root"
+              sequence="20"/>
+
+	<menuitem id="menu_library_member_list"
+              name="Members"
+              parent="menu_library_members"
+              action="action_library_member"
+              sequence="10"/>
+
 </odoo>
