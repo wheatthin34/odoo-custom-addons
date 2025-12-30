@@ -13,6 +13,10 @@
 						<h1>
 							<field name="name" placeholder="Book Title"/>
 						</h1>
+						<div class="o_row">
+							<field name="rating" widget="priority"/>
+							<span class="text-muted"> Rating</span>
+						</div>
 					</div>
 					<group>
 						<group string="Book Information">
