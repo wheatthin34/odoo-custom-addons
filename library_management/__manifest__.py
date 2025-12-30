@@ -10,6 +10,7 @@
         * Manage books and authors
         * Track borrowing and returns
         * Book ratings
+        * Messaging and activities
         * Professional module for library operations
     """,
 
@@ -17,7 +18,7 @@
     'website': "https://www.yourcompany.com",
     'category': 'Uncategorized',
     'version': '1.0.1',
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/library_book_views.xml',
